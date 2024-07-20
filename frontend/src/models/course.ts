@@ -1,5 +1,4 @@
 // models/course.ts
-
 class Course {
     constructor(
         public id: number,

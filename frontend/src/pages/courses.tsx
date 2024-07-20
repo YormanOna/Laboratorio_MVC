@@ -8,14 +8,22 @@ const CoursesPage: React.FC = () => {
     const controller = new CourseController();
 
     useEffect(() => {
-        const coursesData = controller.initialize();
-        setCourses(coursesData);
+        async function fetchData() {
+            const coursesData = await controller.initialize();
+            setCourses(coursesData);
+        }
+        fetchData();
     }, []);
+
+    const handleDeleteCourse = async (id: number) => {
+        await controller.deleteCourse(id);
+        setCourses(courses.filter(course => course.id !== id));
+    };
 
     return (
         <div>
             <h1>Lista de Cursos</h1>
-            <CourseView courses={courses} />
+            <CourseView courses={courses} onDelete={handleDeleteCourse} />
         </div>
     );
 };
