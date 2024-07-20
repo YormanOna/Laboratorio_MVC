@@ -1,7 +1,6 @@
 import React from 'react';
 import { Course } from '../models/course';
 import Link from 'next/link';
-import CourseController from '../controllers/courseController';
 
 interface CourseViewProps {
     courses: Course[];
@@ -18,7 +17,7 @@ const CourseView: React.FC<CourseViewProps> = ({ courses, onDelete }) => {
     };
 
     return (
-        <div>
+        <div>       
             {courses.map((course) => (
                 <div key={course.id}>
                     <h2>{course.name}</h2>
@@ -30,6 +29,11 @@ const CourseView: React.FC<CourseViewProps> = ({ courses, onDelete }) => {
                     <button onClick={() => handleDelete(course.id)}>Eliminar</button>
                 </div>
             ))}
+            <div style={{ marginBottom: '20px' }}>
+                <Link href="/" legacyBehavior>
+                    <a>Regresar</a>
+                </Link>
+            </div>
         </div>
     );
 };
