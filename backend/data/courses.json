@@ -10,5 +10,11 @@
     "name": "Next JS",
     "description": "Aprende a utilizar Next JS",
     "instructor": "Danilo Cruz A"
+  },
+  {
+    "id": 1721494289835,
+    "name": "React JS",
+    "description": "Curso de REACT",
+    "instructor": "Juan Torres"
   }
 ]
