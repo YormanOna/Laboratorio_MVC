@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import CourseController from '../controllers/courseController';
 import { Course } from '../models/course';
+import Link from 'next/link';
 
 const EditCoursePage: React.FC = () => {
     const [course, setCourse] = useState<Course | null>(null);
@@ -56,36 +57,43 @@ const CourseForm: React.FC<CourseFormProps> = ({ course, onSubmit }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Nombre del Curso:</label>
-                <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                />
+        <div>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Nombre del Curso:</label>
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Descripción:</label>
+                    <input
+                        type="text"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Instructor:</label>
+                    <input
+                        type="text"
+                        value={instructor}
+                        onChange={(e) => setInstructor(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit">Actualizar Curso</button>
+            </form>
+            <div style={{ marginBottom: '20px' }}>
+                <Link href="/courses" legacyBehavior>
+                    <a>Regresar</a>
+                </Link>
             </div>
-            <div>
-                <label>Descripción:</label>
-                <input
-                    type="text"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                />
-            </div>
-            <div>
-                <label>Instructor:</label>
-                <input
-                    type="text"
-                    value={instructor}
-                    onChange={(e) => setInstructor(e.target.value)}
-                    required
-                />
-            </div>
-            <button type="submit">Actualizar Curso</button>
-        </form>
+        </div>
     );
 };
 

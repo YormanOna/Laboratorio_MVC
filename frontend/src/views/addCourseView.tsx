@@ -1,6 +1,7 @@
 // views/addCourseView.tsx
 import React, { useState } from 'react';
 import { Course } from '../models/course';
+import Link from 'next/link';
 
 interface AddCourseViewProps {
     onAddCourse: (course: Course) => void;
@@ -21,36 +22,44 @@ const AddCourseView: React.FC<AddCourseViewProps> = ({ onAddCourse }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Nombre del Curso:</label>
-                <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                />
+        <div>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Nombre del Curso:</label>
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Descripción:</label>
+                    <input
+                        type="text"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Instructor:</label>
+                    <input
+                        type="text"
+                        value={instructor}
+                        onChange={(e) => setInstructor(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit">Agregar Curso</button>
+            </form>
+            <div style={{ marginBottom: '20px' }}>
+                <Link href="/" legacyBehavior>
+                    <a>Regresar</a>
+                </Link>
             </div>
-            <div>
-                <label>Descripción:</label>
-                <input
-                    type="text"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                />
-            </div>
-            <div>
-                <label>Instructor:</label>
-                <input
-                    type="text"
-                    value={instructor}
-                    onChange={(e) => setInstructor(e.target.value)}
-                    required
-                />
-            </div>
-            <button type="submit">Agregar Curso</button>
-        </form>
+        </div>
+        
     );
 };
 
