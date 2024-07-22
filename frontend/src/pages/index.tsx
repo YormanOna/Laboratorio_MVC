@@ -8,8 +8,17 @@ const HomePage: React.FC = () => {
             <Link href="/courses">
                 Ver Cursos
             </Link>
+            <br />
             <Link href="/addCourses">
                 Agregar Curso
+            </Link>
+            <br />
+            <Link href="/enrollCourse">
+                Inscribirse a un Curso
+            </Link>
+            <br />
+            <Link href="/courseDetails">
+                Detalles del Curso
             </Link>
         </div>
     );

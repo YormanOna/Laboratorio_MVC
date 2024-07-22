@@ -16,5 +16,11 @@
     "name": "React JS",
     "description": "Curso de REACT",
     "instructor": "Juan Torres"
+  },
+  {
+    "id": 1721634037660,
+    "name": "Python",
+    "description": "Ninguna",
+    "instructor": "Sheylee Enriquez"
   }
 ]

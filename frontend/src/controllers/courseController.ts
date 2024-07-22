@@ -37,6 +37,17 @@ class CourseController {
             console.error('Failed to delete course:', error);
         }
     }
+
+
+    async getAllCourses(): Promise<Course[]> {
+        try {
+            const response = await axios.get(CourseController.API_URL);
+            return response.data;
+        } catch (error) {
+            console.error('Failed to fetch courses:', error);
+            return [];
+        }
+    }
 }
 
 export default CourseController;
