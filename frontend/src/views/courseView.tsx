@@ -17,21 +17,23 @@ const CourseView: React.FC<CourseViewProps> = ({ courses, onDelete }) => {
     };
 
     return (
-        <div>       
+        <div style={{marginLeft: '50px', backgroundColor: '#E4F2F5', marginRight: '50px', borderRadius: '50px'}}>       
             {courses.map((course) => (
-                <div key={course.id}>
+                <div key={course.id} style={{marginLeft: '50px'}}>
                     <h2>{course.name}</h2>
                     <p>{course.description}</p>
                     <p>Instructor: {course.instructor}</p>
                     <Link href={`/editCourse?id=${course.id}`} legacyBehavior>
-                        <a>Editar</a>
+                        <a style={{backgroundColor: 'white'}}>Editar</a>
                     </Link>
+                    <a style={{backgroundColor: 'white'}}>
                     <button onClick={() => handleDelete(course.id)}>Eliminar</button>
+                    </a>
                 </div>
             ))}
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ padding: '50px' }}>
                 <Link href="/" legacyBehavior>
-                    <a>Regresar</a>
+                    <a style={{backgroundColor: 'white'}}>Regresar</a>
                 </Link>
             </div>
         </div>

@@ -61,7 +61,7 @@ const CourseForm: React.FC<CourseFormProps> = ({ course, onSubmit }) => {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Nombre del Curso:</label>
-                    <input
+                    <input style={{backgroundColor: '#E4F2F5', borderRadius: '10px', textAlign: 'center'}}
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -70,7 +70,7 @@ const CourseForm: React.FC<CourseFormProps> = ({ course, onSubmit }) => {
                 </div>
                 <div>
                     <label>Descripción:</label>
-                    <input
+                    <input style={{backgroundColor: '#E4F2F5', borderRadius: '10px', textAlign: 'center'}}
                         type="text"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
@@ -79,16 +79,20 @@ const CourseForm: React.FC<CourseFormProps> = ({ course, onSubmit }) => {
                 </div>
                 <div>
                     <label>Instructor:</label>
-                    <input
+                    <input style={{backgroundColor: '#E4F2F5', borderRadius: '10px', textAlign: 'center'}}
                         type="text"
                         value={instructor}
                         onChange={(e) => setInstructor(e.target.value)}
                         required
                     />
                 </div>
-                <button type="submit">Actualizar Curso</button>
+                <div style={{ marginTop: '20px' }}>
+                    <a>
+                    <button type="submit">Actualizar Curso</button>
+                    </a>
+                </div>
             </form>
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginTop: '20px' }}>
                 <Link href="/courses" legacyBehavior>
                     <a>Regresar</a>
                 </Link>
